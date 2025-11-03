@@ -13,4 +13,6 @@ const (
 	Wavatar    DefaultValue = "wavatar"
 	Retro      DefaultValue = "retro"
 	Blank      DefaultValue = "blank"
+	Initials   DefaultValue = "initials"
+	Color      DefaultValue = "color"
 )
