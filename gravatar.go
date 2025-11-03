@@ -105,6 +105,8 @@ func (g *Gravatar) DefaultURL(urlString string) *Gravatar {
 func (g *Gravatar) Initials(initials string) *Gravatar {
     g.initials = initials
 	g.defaultValue = "initials"
+
+	return g
 }
 
 // Default sets a default value to be used if no
