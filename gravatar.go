@@ -21,6 +21,7 @@ type Gravatar struct {
 	size         int
 	forceDefault bool
 	rating       string
+	initials     string
 }
 
 // New creates a new Gravatar instance based
@@ -56,6 +57,10 @@ func (g *Gravatar) AvatarURL() string {
 
 	if g.size > 0 {
 		url = g.addParameter(url, "s", strconv.Itoa(g.size))
+	}
+
+	if g.initials != "" {
+		url = g.addParameter(url, "initials", g.initials)
 	}
 
 	return url
@@ -94,6 +99,12 @@ func (g *Gravatar) DefaultURL(urlString string) *Gravatar {
 	}
 
 	return g
+}
+
+// Set the initials for the user, also set the default to initials
+func (g *Gravatar) Initials(initials string) *Gravatar {
+    g.initials = initials
+	g.defaultValue = "initials"
 }
 
 // Default sets a default value to be used if no
